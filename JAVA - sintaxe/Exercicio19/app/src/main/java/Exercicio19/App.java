@@ -24,13 +24,13 @@ public class App {
         }
         for(i=0; i<5; i++){
             System.out.print("Digite o sexo de "+ nome[i] +" [M]/[F]: ");
-            sexo[i] = leitor.next();
+            sexo[i] = leitor.nextLine();
         }
         for(i=0; i<5; i++){
-            if((sexo[i] == "M")||(sexo[i] == "m")){
+            if((sexo[i].startsWith("M"))||(sexo[i].startsWith("m"))){
                 System.out.println(nome[i] +" é do sexo masculino.");
             }
-            else if((sexo[i] == "F")||(sexo[i] == "f")){
+            else if((sexo[i].startsWith("F"))||(sexo[i].startsWith("f"))){
                 System.out.println(nome[i] +" é do sexo feminino.");
             }
             else{
