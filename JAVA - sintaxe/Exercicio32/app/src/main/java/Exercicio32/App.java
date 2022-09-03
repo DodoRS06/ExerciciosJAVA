@@ -20,7 +20,6 @@ public class App {
         DecimalFormat formato = new DecimalFormat("0.00");
         
         float ladoA, ladoB, ladoC;
-        float aux1, aux2, aux3;
         
         System.out.print("Digite o valor do lado A: ");
         ladoA = leitor.nextFloat();
@@ -29,11 +28,7 @@ public class App {
         System.out.print("Digite o valor do lado C: ");
         ladoC = leitor.nextFloat();
         
-        aux1 = ladoA + ladoB;
-        aux2 = ladoA + ladoC;
-        aux3 = ladoB + ladoC;
-                
-        if((aux1 >= ladoC)||(aux2 >= ladoB)||(aux3 >= ladoA)){
+        if(((ladoA + ladoB) <= ladoC)||((ladoA + ladoC) <= ladoB)||((ladoB + ladoC) <= ladoA)){
             System.out.println("A figura não é um triângulo.");
         }
         else{
@@ -46,7 +41,6 @@ public class App {
             else{
                 System.out.println("Escaleno.");
             }
-            
         }
     }
 }
