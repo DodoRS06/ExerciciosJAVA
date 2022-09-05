@@ -13,20 +13,43 @@ public class BombaCombustivel {
 
     public void abastecerPorValor(){
         float litros, abastecido;
+        boolean teste = true;
         
-        System.out.print("Digite o valor a ser abastecido: R$");
-        abastecido = leitor.nextFloat();
-        litros = abastecido / valor;
-        System.out.println("Foram abastecidos "+ formato.format(litros) +" litros de "+ tipo +".");
+        while(teste == true ){
+            System.out.print("Digite o valor a ser abastecido: R$");
+            abastecido = leitor.nextFloat();
+            litros = abastecido / valor;
+            
+            if(litros < quantidade){
+                System.out.println("Foram abastecidos "+ formato.format(litros) +" litros de "+ tipo +".");
+                this.quantidade = quantidade - litros;
+                teste = false;
+            }
+            else{
+                System.out.println("Não há combustível suficiente na bomba.");
+            }
+        }
     }
     
     public void abastecerPorLitro(){
         float litros, abastecido;
+        boolean teste = true;
         
-        System.out.print("Digite quantos litros deseja abastecer: ");
-        litros = leitor.nextFloat();
-        abastecido = litros * valor;
-        System.out.println("Ficaram R$"+ formato.format(abastecido) +" ao todo.");
+        while(teste == true){
+            System.out.print("Digite quantos litros deseja abastecer: ");
+            litros = leitor.nextFloat();
+            
+            if(litros < quantidade){
+                abastecido = litros * valor;
+                System.out.println("Ficaram R$"+ formato.format(abastecido) +" ao todo.");
+                this.quantidade = quantidade - litros;
+                teste = false;
+            }
+            else{
+                System.out.println("Não há combustível suficiente na bomba.");
+            }
+        }
+        
     }
     
     public void alterarValor(){
@@ -37,7 +60,8 @@ public class BombaCombustivel {
     }
     
     public void alterarCombustivel(){
-        int Combustivel;
+        int combustivel;
+        String novoTipo = null;
         boolean teste = true;
         
         System.out.println("Digite o tipo de combustível: ");
@@ -45,24 +69,24 @@ public class BombaCombustivel {
         System.out.println("2 - Gasolina");
         System.out.println("3 - Diesel");
         System.out.println("4 - Gás");
-        Combustivel = leitor.nextInt();
+        combustivel = leitor.nextInt();
         
         while(teste == true){
-            switch(Combustivel){
+            switch(combustivel){
                 case 1:
-                    tipo = "Etanol";
+                    novoTipo = "Etanol";
                     teste = false;
                     break;
                 case 2:
-                    tipo = "Gasolina";
+                    novoTipo = "Gasolina";
                     teste = false;
                     break;
                 case 3:
-                    tipo = "Diesel";
+                    novoTipo = "Diesel";
                     teste = false;
                     break;
                 case 4:
-                    tipo = "Gas";
+                    novoTipo = "Gas";
                     teste = false;
                     break;
                 default:
@@ -70,11 +94,24 @@ public class BombaCombustivel {
                     System.out.println("Tipo indefinido.");
             }
         }
-        setTipo();
+        this.tipo = novoTipo;
     }
     
     public void alterarQuantidadeCombustivel(){
+        float quant;
+        boolean teste = true;
         
+        while(teste == true){
+            System.out.print("Digite a nova quantidade: ");
+            quant = leitor.nextFloat();
+            if(quant > 0){
+                this.quantidade = quant;
+                teste = false;
+            }
+            else{
+                System.out.println("Quantidade inválida!");
+            }
+        }
     }
     
     public String getTipo() {
