@@ -41,7 +41,12 @@ public class contaCorrente {
         if(saldo > 0){
             System.out.print("Digite o valor do saque: R$");
             saque = leitor.nextInt();
-            this.saldo = saldo - saque;
+            if(saque <= saldo){
+                this.saldo = saldo - saque;
+            }
+            else{
+                System.out.println("Você não tem saldo suficiente!");
+            }
         }
         else{
             System.out.println("Você não tem saldo suficiente!");
