@@ -30,14 +30,14 @@ public class contaCorrente {
     }
     
     public void deposito(){
-        int deposito = 0;
+        int deposito;
         System.out.print("Digite o valor do depósito: R$");
         deposito = leitor.nextInt();
         this.saldo = deposito;
     }
     
     public void saque(){
-        int saque = 0;
+        int saque;
         if(saldo > 0){
             System.out.print("Digite o valor do saque: R$");
             saque = leitor.nextInt();
