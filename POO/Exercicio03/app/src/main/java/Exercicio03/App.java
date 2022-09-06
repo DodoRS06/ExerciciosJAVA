@@ -97,7 +97,7 @@ public class App {
             if((resp.startsWith("n"))||(resp.startsWith("N"))){
                 teste2 = false;
             }
-            System.out.println("Restaram "+ formato.format(objeto.getQuantidade()) + "litros na bomba");
+            System.out.println("Restaram "+ formato.format(objeto.getQuantidade()) + " litros na bomba");
         }
     }
 }
