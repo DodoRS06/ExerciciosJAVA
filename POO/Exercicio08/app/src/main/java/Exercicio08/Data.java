@@ -161,5 +161,4 @@ public class Data {
     public void setAnoN(int anoN){
         this.anoN = anoN;
     }
-    
 }
