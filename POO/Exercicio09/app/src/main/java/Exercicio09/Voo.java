@@ -4,7 +4,7 @@ public class Voo {
 
     private int numero;
     private String horario;
-    private int vagas[] = new int[10];
+    private int vagas[] = new int[100];
 
     public Voo(int numero, String horario) {
         setNumero(numero);
@@ -12,7 +12,7 @@ public class Voo {
     }
     
     public void proximoLivre(){
-        for(int i=1; i<10; i++){
+        for(int i=1; i<101; i++){
             if(vagas[i] == 0){
                 System.out.println("Cadeira "+ i +" livre.");
             }
@@ -35,7 +35,7 @@ public class Voo {
     
     public int vagas(){
         int cont = 0;
-        for(int i=0; i<10; i++){
+        for(int i=1; i<101; i++){
             if(vagas[i] == 0){
                 cont = cont + 1;
             }

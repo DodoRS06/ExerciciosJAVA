@@ -65,8 +65,9 @@ public class App {
                     break;
                 case 5:
                     System.out.println("Número do vôo: "+ objeto.getVoo());
-                    System.out.println(obj.getDiaN() + "/"+ obj.getMesN() +"/"+ obj.getAnoN());
+                    System.out.println(obj.getDia() + "/"+ obj.getMes() +"/"+ obj.getAno());
                     System.out.println("Horário: "+ objeto.getHorario());
+                    break;
                 default:
                     System.out.println("Opção inválida.");
                     break;
