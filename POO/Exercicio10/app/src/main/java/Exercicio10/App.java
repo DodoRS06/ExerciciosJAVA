@@ -51,6 +51,7 @@ public class App {
             objeto.dados();
         }
         else{
+            System.out.println("");
             System.out.println("Datas inválidas.");
         }
     }
